@@ -14,6 +14,7 @@ public class NotePage {
   // @FindBy(xpath = "//input[@placeholder='Username or email']")
     @FindBy( id = "user")
  //   @FindBy(xpath = "/html/body/div[1]/div/main/div/div/form/fieldset/p[1]/input ")
+   // @FindBy(xpath = "//p[@class='grouptop']")
     public WebElement username;
 
     @FindBy(id = "password")
@@ -56,13 +57,41 @@ public class NotePage {
     @FindBy(xpath = "//a[@class='nav-icon-favorites svg']")
     public WebElement favoritesBtn;
 
-   // @FindBy(xpath = "//a[@href='/index.php/apps/files?dir=/Notes&openfile=27477']")
-    @FindBy(xpath = "//span[contains(@class,'innernametext')]  [contains(text(),'Hello World! (26)')]")
+
+    //@FindBy(xpath = "//span[contains(@class,'innernametext')]  [contains(text(),'Hello World! (26)')]")
+    @FindBy(xpath= "//div[@id='app-content-favorites']")
     public WebElement favList;
 
-   @FindBy(xpath = "'/html/body/div[3]/div[2]/div[4]/table/tbody/tr/td[1]/a/span[2]/a[2]'")
+
+    @FindBy(xpath = "//*[@id=\"note-container\"]/span/div[1]/div/div/button/span")
     public WebElement favThreedots;
 
 
+    @FindBy(xpath = "//span[contains(@class,'action-button__text')]  [contains(text(), 'Details')]")
+    public WebElement detailsBtn;
+
+    @FindBy(xpath = "//p[@class=\'app-sidebar-header__subtitle\']")
+    public WebElement letterWordInfo;
+
+    @FindBy(xpath = "//form[@class='category']//div[1]//input")
+    public WebElement uncategorizedBtn;
+
+    @FindBy(xpath = "//input[@class='icon-confirm loading']")
+    public WebElement arrowIcon;
+
+    @FindBy(xpath = "//span[contains(@class,'app-navigation-entry__title')]  [contains(text(), 'Categories')]")
+    public WebElement categoriesFileBtn;
+
+    @FindBy(xpath = "//ul[@class='app-navigation-entry__children']//li[3]")
+    public WebElement newCategory;
+
+    @FindBy(xpath = "//*[@id=\"app-navigation-vue\"]/ul/li[2]/div/div/div/div/button/span")
+    public  WebElement finalthreeDots;
+
+    @FindBy(xpath = "//span[contains(@class,'action-button__text')]  [contains(text(), 'Delete note')]")
+    public WebElement deleteNoteBtn;
+
+    @FindBy(xpath = "//ul[@class='app-navigation__list']")
+    public WebElement allCategoriesTable;
 
 }

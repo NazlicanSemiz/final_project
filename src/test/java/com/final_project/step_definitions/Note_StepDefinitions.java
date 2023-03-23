@@ -34,8 +34,9 @@ public class Note_StepDefinitions {
     public void user_should_be_able_to_home_page_successfully() {
 
         Assert.assertTrue(notePage.dashboard.isDisplayed());
-        BrowserUtils.sleep(2);
+
     }
+
     @When("user clicks on the pen shaped notes icon")
     public void user_clicks_on_the_pen_shaped_notes_icon() {
 
@@ -79,7 +80,7 @@ public class Note_StepDefinitions {
        // WebDriverWait wait = new WebDriverWait(Driver.getDriver(),15);
        // wait.until(ExpectedConditions.elementToBeClickable(notePage.threeDots));
        // notePage.threeDots.click();
-        BrowserUtils.sleep(7);
+        BrowserUtils.sleep(15);
         BrowserUtils.clickWithJS(notePage.threeDots);
 
 
@@ -112,7 +113,7 @@ public class Note_StepDefinitions {
     @Then("user should see the file that newly added to favorites list under Favorites inside the Files")
     public void user_should_see_the_file_that_newly_added_to_favorites_list_under_favorites_inside_the_files() {
 
-    // Assert.assertTrue(notePage.favList.isDisplayed());
+     Assert.assertTrue(notePage.favList.isDisplayed());
 
     }
 
@@ -126,49 +127,70 @@ public class Note_StepDefinitions {
 
     @And("user clicks on the details")
     public void userClicksOnTheDetails() {
-        
+
+        BrowserUtils.sleep(5);
+        notePage.detailsBtn.click();
     }
 
     @Then("Verify that the note details are displayed, including the number of letters and words in the note")
     public void verifyThatTheNoteDetailsAreDisplayedIncludingTheNumberOfLettersAndWordsInTheNote() {
+
+   Assert.assertTrue(notePage.letterWordInfo.isDisplayed());
     }
 
     @When("user clicks on the Uncategorized placeholder")
     public void userClicksOnTheUncategorizedPlaceholder() {
-        
+
+        BrowserUtils.sleep(15);
+        notePage.uncategorizedBtn.click();
+        //BrowserUtils.clickWithJS(notePage.uncategorizedBtn);
     }
 
     @And("user writes new category name")
     public void userWritesNewCategoryName() {
-        
+        notePage.uncategorizedBtn.sendKeys("newcat");
     }
 
     @And("user clicks on the arrow icon")
     public void userClicksOnTheArrowIcon() {
+
+        BrowserUtils.sleep(15);
+        notePage.arrowIcon.click();
+       //BrowserUtils.clickWithJS(notePage.arrowIcon);
         
     }
 
     @And("user clicks on the Categories file")
     public void userClicksOnTheCategoriesFile() {
-        
+
+        BrowserUtils.sleep(15);
+        //notePage.categoriesFileBtn.click();
+        BrowserUtils.clickWithJS(notePage.categoriesFileBtn);
     }
 
     @Then("verify that new category appears")
     public void verifyThatNewCategoryAppears() {
-        
+
+        Assert.assertTrue(notePage.newCategory.isEnabled());
     }
 
     @When("user clicks on the three dots icon")
     public void userClicksOnTheThreeDotsIcon() {
-        
+
+        BrowserUtils.sleep(7);
+        BrowserUtils.clickWithJS(notePage.finalthreeDots);
     }
 
     @And("user clicks on the delete note button")
     public void userClicksOnTheDeleteNoteButton() {
+        BrowserUtils.sleep(15);
+        notePage.deleteNoteBtn.click();
         
     }
 
     @Then("Verify that the note is no longer displayed on the main screen.")
     public void verifyThatTheNoteIsNoLongerDisplayedOnTheMainScreen() {
+
+        Assert.assertTrue(notePage.allCategoriesTable.isDisplayed());
     }
 }
