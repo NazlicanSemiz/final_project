@@ -1,4 +1,4 @@
-package com.final_project.pages;
+package com.final_project.step_definitions;
 
 import com.final_project.utilities.BrowserUtils;
 import com.final_project.utilities.Driver;
